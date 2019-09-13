@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20190913155632) do
   create_table "course_students", force: :cascade do |t|
     t.bigint "course_id"
     t.bigint "student_id"
+    t.integer "grade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["course_id"], name: "index_course_students_on_course_id"
@@ -32,7 +33,6 @@ ActiveRecord::Schema.define(version: 20190913155632) do
 
   create_table "students", force: :cascade do |t|
     t.string "name"
-    t.integer "grade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,21 @@
+<div class="container">
+  <br />
+  <h3 class="display-3"><%= @student.name %></h3>
+  <br />
+  <table class="table"  align="center">
+    <thead>
+      <tr>
+        <th scope="col">Course Name</th>
+        <th scope="col">Grade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @student.course_students.each do |course_student| %>
+        <tr id="record-<%= course_student.id %>">
+          <td><%= course_student.course.name  %></td>
+          <td><%= course_student.grade %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

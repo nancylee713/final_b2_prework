@@ -14,7 +14,7 @@ RSpec.describe "Student Show Page", type: :feature do
         world_history = Course.create!(name: "World History")
         world_history_pete = CourseStudent.create!(course_id: world_history.id, student_id: pete.id, grade: 93)
 
-        visit student_path(pete.id)
+        visit student_path(pete)
 
         expect(page).to have_content(pete.name)
 

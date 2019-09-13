@@ -1,0 +1,23 @@
+<div class="container">
+  <br />
+  <h3 class="display-3"><%= @course.name %></h3>
+  <br />
+  <table class="table"  align="center">
+    <thead>
+      <tr>
+        <th scope="col">Rank</th>
+        <th scope="col">Student Name</th>
+        <th scope="col">Grade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @course_students.sort_by_grade.each_with_index do |student, i| %>
+        <tr id="record-<%= i + 1%>">
+          <td><%= i + 1 %></td>
+          <td><%= student[0]  %></td>
+          <td><%= student[1] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

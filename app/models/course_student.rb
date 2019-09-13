@@ -5,4 +5,11 @@ class CourseStudent < ApplicationRecord
 
   belongs_to :course
   belongs_to :student
+
+  def self.sort_by_grade
+    CourseStudent.joins(:student)
+    .select(:name)
+    .order(grade: :desc)
+    .pluck(:name, :grade)
+  end
 end

@@ -7,4 +7,8 @@ describe Student, type: :model do
     it { should validate_inclusion_of(:grade).in_range(0..100) }
   end
 
+  describe "relationships" do
+    it { should have_many :course_students }
+    it { should have_many(:courses).through(:course_students) }
+  end
 end

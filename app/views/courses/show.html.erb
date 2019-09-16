@@ -11,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @course_students.sort_by_grade.each_with_index do |student, i| %>
+      <% @course_students.sort_by_grade(@course).each_with_index do |student, i| %>
         <tr id="record-<%= i + 1%>">
           <td><%= i + 1 %></td>
           <td><%= student[0]  %></td>

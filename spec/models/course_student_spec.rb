@@ -25,7 +25,7 @@ describe CourseStudent, type: :model do
 
       result = [[pete.name, highest.grade], [sarah.name, middle.grade], [john.name, lowest.grade]]
 
-      expect(CourseStudent.sort_by_grade).to eq(result)
+      expect(CourseStudent.sort_by_grade(math)).to eq(result)
     end
   end
 end
